@@ -1,0 +1,18 @@
+Pipelines:
+- name: segmentation
+  inputs: [ImageTopic]
+  infers:
+    - name: ObjectSegmentation
+      model: /opt/openvino_toolkit/models/segmentation/output/FP16/frozen_inference_graph.xml
+      engine: "HETERO:CPU,GPU,MYRIAD"
+      label: to/be/set/xxx.labels
+      batch: 1
+      confidence_threshold: 0.5
+  outputs: [ImageWindow, RosTopic, RViz]
+  connects:
+    - left: ImageTopic
+      right: [ObjectSegmentation]
+    - left: ObjectSegmentation
+      right: [ImageWindow, RosTopic, RViz]
+
+OpenvinoCommon:
