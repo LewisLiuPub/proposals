@@ -21,7 +21,7 @@ This proposal adds AI-accelerated intelligent collision avoidance and scene-base
 
 Below figure shows the pipelines we designed for the proposal.
 
-![Intelligent Navigation Design](https://github.com/LewisLiuPub/proposals/blob/mainintelligent_navigation/intelligent_navigation_design.PNG "Intelligent Navigation Design")
+![Intelligent Navigation Design](https://github.com/LewisLiuPub/proposals/blob/main/ROSCon2021/ROSCon2021/intelligent_navigation_design.PNG "Intelligent Navigation Design")
 
 A **RGB-D Camera** is used as the inputs in the design, whose 2D image data (RGB) are streamed to `Deep Learning packages for Object Detection` inference, and whose 3D depth data are streamed to `Object Localization and Tracking` module. The 2D data and 3D data should be aligned by timestamps, making sure both the data capturing the same scenery. 
 
@@ -35,7 +35,7 @@ A **RGB-D Camera** is used as the inputs in the design, whose 2D image data (RGB
 
 Below picture shows the details of Moving Inflation.
 
-![Moving Inflation Layer](https://github.com/LewisLiuPub/proposals/blob/mainintelligent_navigation/moving_inflation_layer.PNG "Moving Inflation Layer")
+![Moving Inflation Layer](https://github.com/LewisLiuPub/proposals/blob/main/ROSCon2021/ROSCon2021/moving_inflation_layer.PNG "Moving Inflation Layer")
 
 The moving inflation is figured in ellipse shape. The position of the moving object is a focus of the ellipse, the other focus is on the direction of the velocity of the mobbing object. That means, the major axis (the longest diameter) is aligned with the object’s moving direction. The shortest diameter equals the normal inflation diameter, which is adopted in Inflation layer.
 
@@ -59,7 +59,7 @@ With these add-ons integrated, `navigation stack` can be smarter, since the obje
 
 We have developed the below pipelines and opensource projects for the idea.
 
-![Current Implementation](https://github.com/LewisLiuPub/proposals/blob/mainintelligent_navigation/current_implementation.PNG "Current Implementation")
+![Current Implementation](https://github.com/LewisLiuPub/proposals/blob/main/ROSCon2021/ROSCon2021/current_implementation.PNG "Current Implementation")
 
 #### Key components in our design:
   - Intel Realsense Camera
